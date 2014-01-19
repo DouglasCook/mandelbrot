@@ -6,7 +6,6 @@ public class Complex
 {
     private double real, imaginary;
 
-    // constructor
     public Complex(double _real, double _imaginary)
     {
         real = _real;
@@ -14,10 +13,13 @@ public class Complex
     }
 
     // accessor functions to access values of the private variables
-    public double getReal(){
+    public double getReal()
+    {
         return real;
     }
-    public double getImaginary(){
+
+    public double getImaginary()
+    {
         return imaginary;
     }
 
@@ -45,7 +47,8 @@ public class Complex
         return z;
     }
 
-    public double absolute(){
+    public double absolute()
+    {
         return Math.sqrt((real*real) + (imaginary*imaginary));
     }
 
@@ -69,13 +72,5 @@ public class Complex
         }
         // return the escape value or maxEscape if it has been reached
         return i;
-    }
-
-    public static void main(String args[]){
-        Complex z = new Complex(2.5, 1.3);
-
-        int x = Complex.getMandelbrotEscapeVal(z, 100);
-
-        System.out.println(x);
     }
 }
