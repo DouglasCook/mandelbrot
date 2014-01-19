@@ -19,9 +19,9 @@ import java.awt.event.ActionEvent;
  */
 public class MandelbrotCanvas extends JComponent
 {
-    final int MAX_ESCAPE_VAL = 200;
-    final int WIDTH = 768;
-    final int HEIGHT = 576;
+    private final int MAX_ESCAPE_VAL = 200;
+    private final int WIDTH = 768;
+    private final int HEIGHT = 576;
 
     int colourA = 1000;
     int colourB = 4000000;
@@ -120,6 +120,14 @@ public class MandelbrotCanvas extends JComponent
         }
 
         g.drawImage(buff, 0, 0, null);
+    }
+
+    // accessor to change secondary colour
+    public void setSecondaryColour(int RGBvalue)
+    {
+        colourB = RGBvalue;
+        //System.out.println("colour value changed to " + colourB);
+        MandelbrotCanvas.this.repaint();
     }
 
     // overridden version of the Jcomponent method
