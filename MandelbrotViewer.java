@@ -27,13 +27,6 @@ public class MandelbrotViewer extends JFrame
         JPanel sliderPanel = new JPanel(new BorderLayout());
         frame.add(sliderPanel, BorderLayout.SOUTH);
 
-        // can't get label on there for some reason???
-        /*
-        JLabel sliderLabel = new JLabel("Secondary colour", JLabel.CENTER);
-        sliderLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(sliderLabel);
-        */
-
         // slider to adjust secondary colour
         JSlider colourSlider =
             new JSlider(JSlider.HORIZONTAL, 0, 16777215, 4000000);
@@ -51,17 +44,22 @@ public class MandelbrotViewer extends JFrame
             }
         };
         colourSlider.addChangeListener(listen);
+
         // setup scale for slider
         colourSlider.setMinorTickSpacing(1000000);
         colourSlider.setPaintTicks(true);
         colourSlider.setPaintLabels(true);
-
-        canvas = new MandelbrotCanvas();
-
-        frame.add(canvas);
         sliderPanel.add(colourSlider);
 
-        // resize frame to fit elements and set it visible
+        // label for slider
+        JLabel sliderLabel = new JLabel("Secondary colour", JLabel.CENTER);
+        sliderLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        sliderPanel.add(sliderLabel, BorderLayout.NORTH);
+
+        canvas = new MandelbrotCanvas();
+        frame.add(canvas);
+
+        // resize frame to fit elements and display it 
         frame.pack();
         frame.setVisible(true);
     }

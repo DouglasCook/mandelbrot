@@ -1,8 +1,5 @@
-Java app for generating and viewing the Mandelbrot set, but mainly for me to learn java!
+Java app for generating and viewing the Mandelbrot set, but mainly for me to learn some java!
 
 - Image can be centred by clicking on point to centre around
 - Zooming can be done with - and + keys and reset with =
-
-Want to add threading to speed it up and make it possible to render more accurate representations.
-
-Also plan to add slider to allow colours to be changed from the GUI
+- Slider at the bottom to control the secondary colour based on an integer representing the RGB spectrum
